@@ -43,20 +43,20 @@ mongoose.connect(dbUrl, {
   useFindAndModify: false,
 });
 
-const store = MongoStore.create({
-  mongoUrl: dbUrl,
-  touchAfter: 24 * 60 * 60,
-  crypto: {
-    secret: "thisshouldbeabettersecret!",
-  },
-});
+// const store = MongoStore.create({
+//   mongoUrl: dbUrl,
+//   touchAfter: 24 * 60 * 60,
+//   crypto: {
+//     secret: "thisshouldbeabettersecret!",
+//   },
+// });
 
-store.on("error", function (e) {
-  console.log("Error to save to dataBase", e);
-});
+// store.on("error", function (e) {
+//   console.log("Error to save to dataBase", e);
+// });
 
 const sessionConfig = {
-  store,
+ 
   secret: "thisshouldbeabettersecret!",
   resave: false,
   saveUninitialized: true,
