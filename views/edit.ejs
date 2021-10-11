@@ -1,0 +1,27 @@
+<% layout('layout/boilerplate') %> 
+  <h1>تصحیح اطلاعات کودک</h1>
+  <form action="/newkid/<%=kid._id %>?_method=PUT " method="POST">
+    
+
+<label for="kidsname">نام مستعار</label> <br/> 
+  <input type="text" name="kidsname" id="kidsname" value="<%=kid.kidsname %> "><br/> <br/>
+
+  
+   <select name="sex" id="sex" value="<%=kid.sex %>">
+            <option><%=kid.sex %></option> 
+            <option  value="پسر " > پسر</option>
+            <option value="دختر " > دختر</option>
+           
+          </select>
+          
+  <br/>   <br/> 
+
+ <label for="age">تاریخ تولد </label> <br/>
+ <input type="number" name="age" id="age" value= <%=kid.age %> >
+  <br/>   <br/> 
+ 
+
+
+  <button type="submit">ثبت تغییرات</button> <br><br>
+  </form>
+

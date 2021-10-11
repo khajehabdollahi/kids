@@ -1,0 +1,29 @@
+<% layout('layout/boilerplate') %> 
+<h1>همه کاربران</h1>
+ <ul style="list-style-type:none">
+    <% for(let user of allUsers) { %>
+      <div class="card">
+        <div class="row">
+          <div class="col-md-12">
+  
+ 
+    <li>Email: <%= user.username %> <br/> 
+    <li> <%= user.name %> :نام و نام خانوادگی<br/> 
+    <li> <%= user.role %>:نقش این کاربر  <br/> 
+    
+    <a href="/users/<%= user.id %>">صفحه شخصی</a>
+
+    
+    
+     
+  
+    <br>
+
+    </li> 
+          </div>
+        </div>
+      </div>
+   
+
+   <%} %>
+  </ul>

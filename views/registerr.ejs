@@ -1,0 +1,28 @@
+<% layout('layout/boilerplate') %>
+<h1>صفحه ثبت نام کاربری</h1>
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <div class="col">
+      <form  action="/register" method="POST" class="validated-form novalidate">
+        <div class="mb-3">
+          <label class="form-label" for="username">Email</label><br>
+          <input class="form-control" type="email" name="username" placeholder=""id="email" placeholder="email"required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label" for="name">نام و نام خانودگی شما</label><br>
+          <input class="form-control" type="text" name="name" id="name" placeholder="Please write ur name" required>
+        </div>
+
+      
+<br>
+        <div class="mb-3">
+          <label class="form-label" for="password">Password</label><br>
+          <input class="form-control" type="password" name="password" id="password" required>
+        </div>
+
+        <button type="submit" class="button-success">Register</button><br><br>
+      </form>
+
+    </div>
+  </div>
+</div>

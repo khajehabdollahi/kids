@@ -1,0 +1,13 @@
+<% layout('layout/boilerplate') %> 
+<h1>Edit confirmed donated amount</h1>
+
+<form action="/editConfiremdamount/<%=donate._id %>/<%=kid._id%>  ?_method=PUT " method="POST">
+    
+
+<h2>The amount that you confirmed is: <%=donate.amount%>  </h2> <br><br>
+
+<label for="amount">The correct amount of donated </label><br>
+<input type="number" name="amount" id="amount"><br><br>
+
+  <button type="submit">ثبت تغییرات</button> <br><br>
+  </form>

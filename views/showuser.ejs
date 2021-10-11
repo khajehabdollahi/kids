@@ -1,0 +1,31 @@
+<% layout('layout/boilerplate') %> 
+
+
+ <h1> <%= user.name %> </h1>
+ Email: <%= user.username %> <br>
+ <%= user.name %> :نام <br>
+
+ 
+  کودکان ثبت کرده <br>
+ <% for(let kidd of kid) {%> 
+  <a href="/newkid/<%=kidd.id%> "><%= kidd.kidsname %></a> <br>
+      
+
+<% } %> 
+ 
+<br>
+ 
+<% if(currentUser && currentUser.username == user.username ) { %> 
+
+
+<a href="/newones">ثبت نام یک کودک</a> <br/>
+<a href="/users/edit/<%=currentUser.id %>">تصحیح اطلاعات شخصی</a><br>
+<a href="/deleteuser/<%= currentUser.id %> ">حذف حساب من</a><br>
+<% if(!currentUser.activated) { %> 
+<br>
+
+ <h4>شما هنوز حساب خود را فعال نکرده اید</h4>
+ <h4>خواهشمند است وارد ای میل خود شده و حساب خود را فعال کنید</h4>
+<% } %> 
+<% } %> 
+

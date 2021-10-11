@@ -1,0 +1,75 @@
+<% layout('layout/boilerplate') %> 
+
+<ul style="list-style-type: none">
+<li> نام: <%= kid.kidsname %>   </li>
+
+<li> جنسیت: <%= kid.sex %>  </li>
+<li> <%= kid.age %> :سن </li>
+
+
+
+<h1>پول های هدیه شده</h1><br>
+ Total Donated Amount:<%=kid.totalDonatedAmount  %> <br>
+ <br>
+ <h3>Donation details</h3><br>
+<% for (let donate of donations.reverse()) {%> 
+  <ul style="list-style-type: none">
+    <li>مقدار هدیه شده: <%=donate.amount%> تومان</li>
+    <li>زمان: <%=donate.date  %> </li>
+    <li>مبلغ تایید شده: <%=donate.confirmedAmount %> </li>
+    <li>  <h3>  <a href="/users/<%=donate.doneatorId %>"><%=donate.donatorsname%></a> :توسط  </h3></li>
+   
+    <li> <%=donate.confirmation  %> :تایید   </li>
+    
+   <% if(currentUser && currentUser.username==kid.creator.username) {%>
+    <%if(donate.confirmation=="Waiting for confirmation"||donate.confirmation=='NaN') { %>  
+     <a href="http:/donateconfirm/<%= donate.id  %>/<%= kid.id %> ">تایید دریافت هدیه</a> <br>
+      
+   <% } %> 
+    <a href="http:/editconfiremdamount/<%= donate.id %>/<%= kid.id %>">Edit confirmed amount</a>
+<% } %> 
+
+
+  </ul>
+<% } %> 
+  
+
+
+
+
+</ul>
+
+
+</ul>
+
+<% if(!currentUser || currentUser.username !=kid.creator.username ) { %> 
+
+<br/>
+  <br/><a href="http:/users/<%= kid.creator.id %>"> ثبت کننده نام کودک</a><br/><br/>
+
+  
+   <a href="/donate/<%= kid.id %>">به این کودک هدیه بدهید</a> <br> 
+
+<br><br>
+
+
+
+ <% } else {%> 
+  
+  <a href="http:/newkid/<%=kid.id %>/edit ">تصحیح اطلاعات</a>
+
+<br/> <br/>
+
+<form action="/kiddeleteconfirm/<%=kid._id %>" method="get">
+  
+
+  <button type="submit">delete</button>
+
+  </form> <br>
+
+   <% } %> 
+
+
+
+
+

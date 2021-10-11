@@ -1,0 +1,22 @@
+<% layout('layout/boilerplate') %> 
+  <h1> نام کودکان</h1>
+
+  <ul style="list-style-type:none">
+    <% for(let k of kids) { %>
+     
+        <div class="row">
+          <div class="col-md-12">
+        <li><h2>  <a href="/newkid/<%= k.id %>"><%= k.kidsname %></a></h2></li>    
+     
+   
+
+    </li> 
+          </div>
+        </div>
+
+   
+
+   <%} %>
+  </ul>
+  <br> <br>
+  <a href="/newones"><h2> ثبت کودک جدید</h2></a>  <br> <br>

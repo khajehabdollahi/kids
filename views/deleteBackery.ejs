@@ -1,0 +1,12 @@
+<% layout('layout/boilerplate') %> 
+<h1>Dear user!</h1><br>
+<h1>Are you sure that you want to delete this backery</h1><br>
+<h1><%=backery.name %> </h1>
+
+<form action="/newb/<%=id %>met " method="get">
+
+<button class="btn btn-danger"type="submit">Yes I want to Delete this backery</button>
+</form> <br> <br><br>
+<form action="/users/<%=id  %> " method="get">
+<button class="btn btn-primary"type="submit">No I want to keep my Account</button>
+</form>

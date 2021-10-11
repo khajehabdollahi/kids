@@ -1,0 +1,29 @@
+<% layout('layout/boilerplate') %> 
+
+
+<form action="/donateconfirm/<%=donate._id %>/<%=kid.id%>?_method=PUT " method="POST">
+  <h3>:شما این مبلغ را</h3>
+   <h3><%=donate.amount %> تومان </h3>
+   
+   <h3> <a href="/users/<%=donate.doneatorId %>">از این فرد دریافت کرده اید؟</a>  </h3>
+<br/>
+
+<h4> پاسخ خود را انتخاب کرده و سپس روی دکمه پاسخ کلیک کنید</h4><br/>
+
+<!-- <input type="text" name="confirmation" id="confirmation" value="true"> -->
+
+
+<select name="confirmation" id="confirmation">
+    <option>آیا این مبلغ به حساب شما آمده؟</option>
+    <option  value='Yes' > بلی</option>
+    <option value='No' >خیر</option>
+    
+  </select> <br/><br/>
+ <label for="confirmedAmount">مبلغی که به حساب واریز شده</label> <br/>
+  <input type="number" name="confirmedAmount" id="confirmedAmount"><br/><br/>
+  
+<%=kid.id%> <br/>
+
+  <button type="submit">پاسخ</button> <br><br>
+  </form>
+ 

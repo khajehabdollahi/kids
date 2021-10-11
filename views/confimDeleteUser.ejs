@@ -1,0 +1,11 @@
+<% layout('layout/boilerplate') %> 
+
+<h1>Dear user! <br /> Are you sure you want to Delete your Account</h1><br>
+
+<form action="/deleteuserconfirmed/<%=id  %> " method="get">
+
+<button class="btn btn-danger"type="submit">Yes I want to Delete my Account</button>
+</form> <br> <br><br>
+<form action="/users/<%=id  %> " method="get">
+<button class="btn btn-primary"type="submit">No I want to keep my Account</button>
+</form>

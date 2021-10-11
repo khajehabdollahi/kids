@@ -1,0 +1,9 @@
+<% layout('layout/boilerplate') %> 
+<h1>رمز عبور خود را فراموش کرده اید؟</h1>
+
+<form action="/forgetpass/<%=tempid %> " method="POST">
+<label for="username"> خود را بنویسید Email? <label/> <br/>
+<input type="email" name="username" placeholder="Email"id="username">
+
+<button type="submit">Send</button>
+</form>
