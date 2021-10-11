@@ -47,7 +47,7 @@ const store = MongoStore.create({
   mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60,
   crypto: {
-    secret: "squirrel",
+    secret: "thisshouldbeabettersecret!",
   },
 });
 
@@ -652,7 +652,7 @@ app.get("/logout", (req, res) => {
 app.use((req, res) => {
   res.status(404).send(`<h1>The page is not defined</h1>`);
 });
-
-app.listen(process.env.PORT || 3000, () => {
+const port=process.env.PORT || 3000
+app.listen(port, () => {
   console.log("BACKERY SERVER RUNNING!");
 });
